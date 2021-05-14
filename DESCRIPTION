@@ -1,0 +1,20 @@
+Package: scINSIGHT
+Type: Package
+Title: Interpretation of Heterogeneous Single-Cell Gene Expression Data
+Version: 0.1.0
+Date: 2021-05-01
+Authors@R: c(person(given = "Kun", family = "Qian", role = c("aut","ctb","cre"), email = "Kun_Qian@foxmail.com", comment = c(ORCID = "0000-0002-2354-2238")),
+             person(given = "Wei Vivian", family = "Li", role = c("aut","ctb"), email = "vivian.li@rutgers.edu", comment = c(ORCID = "0000-0002-2087-2709")))
+Maintainer: Kun Qian <Kun_Qian@foxmail.com>
+Description: We develop a novel matrix factorization tool named 'scINSIGHT' to jointly analyze multiple single-cell gene expression samples from biologically heterogeneous sources, such as different disease phases, treatment groups, or developmental stages. Given multiple gene expression samples from different biological conditions, 'scINSIGHT' simultaneously identifies common and condition-specific gene pathways and quantify their expression levels in each sample in a lower-dimensional space. With the factorized results, the inferred expression levels and memberships of common gene pathways can be used to cluster cells and detect cell identities, and the condition-specific gene pathways can help compare functional differences in transcriptomes from distinct conditions.
+License: GPL-3
+Imports: Rcpp, RANN, igraph, parallel, stats, stringr
+LinkingTo: Rcpp, RcppArmadillo
+Depends: methods
+RoxygenNote: 7.1.1
+NeedsCompilation: yes
+Packaged: 2021-05-01 05:34:57 UTC; yangyulan
+Author: Kun Qian [aut, ctb, cre] (<https://orcid.org/0000-0002-2354-2238>),
+  Wei Vivian Li [aut, ctb] (<https://orcid.org/0000-0002-2087-2709>)
+Repository: CRAN
+Date/Publication: 2021-05-03 08:00:05 UTC
