@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3156403068",
+    "hash" : "2704034096",
     "id" : "C4CF5A6E",
-    "lastKnownWriteTime" : 1621016514,
-    "last_content_update" : 1621016514377,
+    "lastKnownWriteTime" : 1621017351,
+    "last_content_update" : 1621017351252,
     "path" : "~/Box/Rpkg/scINSIGHT-dev/scINSIGHT/README.Rmd",
     "project_path" : "README.Rmd",
     "properties" : {
-        "cursorPosition" : "18,85",
-        "scrollLine" : "6"
+        "cursorPosition" : "35,97",
+        "scrollLine" : "28"
     },
     "relative_order" : 1,
     "source_on_save" : false,

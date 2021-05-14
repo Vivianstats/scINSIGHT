@@ -1,4 +1,4 @@
-scINSIGHT for interpreting single cell gene expressionin biologically heterogeneous data
+scINSIGHT for interpreting single cell gene expression in biologically heterogeneous data
 ================
 Kun Qian, Wei Vivian Li
 2021-05-14
@@ -20,7 +20,7 @@ Any suggestions on the package are welcome! For technical problems, please repor
 
 ## Installation
 
-You can install `MAAPER` from CRAN with:
+You can install `MAAPER` from [CRAN](https://cran.r-project.org/web/packages/scINSIGHT/index.html) with:
 
 ``` r
 install.packages("scINSIGHT")
