@@ -1,7 +1,7 @@
 scINSIGHT for interpreting single cell gene expression in biologically heterogeneous data
 ================
 Kun Qian, Wei Vivian Li
-2021-05-14
+2021-05-16
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <img src="https://github.com/Vivianstats/data-pkg/raw/main/img/scINSIGHT.png" height="200" align="right" />
@@ -20,7 +20,7 @@ Any suggestions on the package are welcome! For technical problems, please repor
 
 ## Installation
 
-You can install `MAAPER` from [CRAN](https://cran.r-project.org/web/packages/scINSIGHT/index.html) with:
+You can install `scINSIGHT` from [CRAN](https://cran.r-project.org/web/packages/scINSIGHT/index.html) with:
 
 ``` r
 install.packages("scINSIGHT")
@@ -28,4 +28,4 @@ install.packages("scINSIGHT")
 
 ## Usage
 
-Please refer to the package tutorial for examples about how to use the package functions.
+Please refer to the [package vignette](https://github.com/Vivianstats/scINSIGHT/wiki/scINSIGHT-vignette) for examples about how to use the package functions.

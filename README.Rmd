@@ -33,11 +33,11 @@ Any suggestions on the package are welcome! For technical problems, please repor
 
 ## Installation
 
-You can install `MAAPER` from [CRAN](https://cran.r-project.org/web/packages/scINSIGHT/index.html) with:
+You can install `scINSIGHT` from [CRAN](https://cran.r-project.org/web/packages/scINSIGHT/index.html) with:
 
 ```{r gh-installation, eval = FALSE}
 install.packages("scINSIGHT")
 ```
 
 ## Usage
-Please refer to the package tutorial for examples about how to use the package functions.
+Please refer to the [package vignette](https://github.com/Vivianstats/scINSIGHT/wiki/scINSIGHT-vignette) for examples about how to use the package functions.
