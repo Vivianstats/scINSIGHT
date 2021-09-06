@@ -153,7 +153,8 @@ run_scINSIGHT<- function(
   K = sort(K)
   cnt_list = object@norm.data
   cnt_list = lapply(cnt_list, function(x){t(x)})
-  labels = object@condition
+  uLabels = unique(object@condition)
+  labels = sapply(object@condition, function(condition){which(uLabels==condition)-1})
 
   if(!is.null(out.dir)){
     if(str_sub(out.dir, -1)!="/"){

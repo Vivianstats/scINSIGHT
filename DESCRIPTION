@@ -2,7 +2,7 @@ Package: scINSIGHT
 Type: Package
 Title: Interpretation of Heterogeneous Single-Cell Gene Expression Data
 Version: 0.1.0
-Date: 2021-05-01
+Date: 2021-09-06
 Authors@R: c(person(given = "Kun", family = "Qian", role = c("aut","ctb","cre"), email = "Kun_Qian@foxmail.com", comment = c(ORCID = "0000-0002-2354-2238")),
              person(given = "Wei Vivian", family = "Li", role = c("aut","ctb"), email = "vivian.li@rutgers.edu", comment = c(ORCID = "0000-0002-2087-2709")))
 Maintainer: Kun Qian <Kun_Qian@foxmail.com>
@@ -13,8 +13,6 @@ LinkingTo: Rcpp, RcppArmadillo
 Depends: methods
 RoxygenNote: 7.1.1
 NeedsCompilation: yes
-Packaged: 2021-05-01 05:34:57 UTC; yangyulan
+Packaged: 2021-05-01 05:34:57 UTC;
 Author: Kun Qian [aut, ctb, cre] (<https://orcid.org/0000-0002-2354-2238>),
   Wei Vivian Li [aut, ctb] (<https://orcid.org/0000-0002-2087-2709>)
-Repository: CRAN
-Date/Publication: 2021-05-03 08:00:05 UTC
