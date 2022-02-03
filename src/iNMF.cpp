@@ -53,7 +53,7 @@ List iNMF_BCD(List count_list,
 
   // Initialize output
   int L = count_list.size();
-  int J = Label.size();
+  int J = max(Label)+1;
 
   // Rcpp::Rcout<<"Start iNMF"<<std::endl;
   std::vector<arma::mat> X(L), W_1(L), W_2(L), H(J);

@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // iNMF_BCD
 List iNMF_BCD(List count_list, NumericVector Label, int K_l, int K, double lda1, double lda2, double eps, int thre_niter, double thre_delta, int seed, bool loop);
 RcppExport SEXP _scINSIGHT_iNMF_BCD(SEXP count_listSEXP, SEXP LabelSEXP, SEXP K_lSEXP, SEXP KSEXP, SEXP lda1SEXP, SEXP lda2SEXP, SEXP epsSEXP, SEXP thre_niterSEXP, SEXP thre_deltaSEXP, SEXP seedSEXP, SEXP loopSEXP) {

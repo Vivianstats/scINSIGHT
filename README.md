@@ -2,7 +2,7 @@ scINSIGHT for interpreting single cell gene expression in biologically
 heterogeneous data
 ================
 Kun Qian, Wei Vivian Li
-2021-09-06
+2022-02-03
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -18,13 +18,13 @@ Kun Qian, Wei Vivian Li
 
 scINSIGHT uses a novel matrix factorization model to jointly analyze
 multiple single-cell gene expression samples from biologically
-heterogeneous sources, such as different diseasephases, treatment
-groups, or developmental stages. It assumes that each gene pathway is
-asparse and non-negative linear combination of genes, and each cell is
-jointly defined by theexpression of common and condition-specific
-pathways. Given multiple gene expression sam-ples from different
+heterogeneous sources, such as different disease phases, treatment
+groups, or developmental stages. It assumes that each gene module is a
+sparse and non-negative linear combination of genes, and each cell is
+jointly defined by the expression of common and condition-specific
+modules. Given multiple gene expression samples from different
 biological conditions, scINSIGHT aims to simultaneously identify common
-andcondition-specific gene pathways and quantify their expression levels
+and condition-specific gene modules and quantify their expression levels
 in each sample in a lower-dimensional space .
 
 Any suggestions on the package are welcome! For technical problems,

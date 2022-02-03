@@ -94,14 +94,14 @@ create_scINSIGHT <- function(norm.data, condition) {
 #' Perform INterpreting single cell gene expresSIon bioloGically Heterogeneous daTa (scINSIGHT) to return factorized \eqn{W_{\ell1}}, \eqn{W_{\ell2}}, \eqn{H} and \eqn{V} matrices.
 #'
 #' This factorization produces a \eqn{W_{\ell1}} matrix (cells by \eqn{K_j}), a \eqn{W_{\ell2}} matrix (cells by \eqn{K}), a shared \eqn{V} matrix (\eqn{K} by genes)
-#' for each sample, and a \eqn{H} (\eqn{K_j} by genes) matrix for each condition. \eqn{W_{\ell2}} are the expression matrices of \eqn{K} common gene pathways for all samples,
-#' \eqn{V} is the membership matrix of \eqn{K} common gene pathways, and it's shared by all samples.
-#' \eqn{W_{\ell1}} are the expression matrices of \eqn{K_j} condition-specific gene pathways for all samples,
-#' and \eqn{H} are the membership matrices of \eqn{K_j} condition-specific gene pathways for all conditions.
+#' for each sample, and a \eqn{H} (\eqn{K_j} by genes) matrix for each condition. \eqn{W_{\ell2}} are the expression matrices of \eqn{K} common gene modules for all samples,
+#' \eqn{V} is the membership matrix of \eqn{K} common gene modules, and it's shared by all samples.
+#' \eqn{W_{\ell1}} are the expression matrices of \eqn{K_j} condition-specific gene modules for all samples,
+#' and \eqn{H} are the membership matrices of \eqn{K_j} condition-specific gene modules for all conditions.
 #'
 #' @param object \code{scINSIGHT} object.
-#' @param K Number of common gene pathways. (default \code{c(5, 7, 9, 11, 13, 15)})
-#' @param K_j Number of dataset-specific gene pathways. (default 2)
+#' @param K Number of common gene modules. (default \code{c(5, 7, 9, 11, 13, 15)})
+#' @param K_j Number of dataset-specific gene modules. (default 2)
 #' @param LDA Regularization parameters. (default \code{c(0.001, 0.01, 0.1, 1, 10)})
 #' @param num.cores Number of cores used for optimizing factorizations in parallel (default 1).
 #' @param B Number of repeats with random seed from 1 to B. (default 5)
@@ -228,7 +228,8 @@ run_scINSIGHT<- function(
   if(length(K)>1){
     message("Select optimal K...")
   }
-  bestK = K[which.max(object@parameters[["stability"]])]
+  # bestK = K[which.max(object@parameters[["stability"]])]
+  bestK = K[sort(order(object@parameters[["stability"]], decreasing = TRUE)[1:3])[2]]
   object@parameters[["K"]] = bestK
   if(length(K)>1){
     message(paste("Best K is selected as K =", bestK))

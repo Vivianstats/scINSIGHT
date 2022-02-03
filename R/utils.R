@@ -2,7 +2,7 @@
 
 #' Normalize \eqn{W_2} and cluster cells.
 #' @description
-#' Quantile normalization and clustering for the list of \eqn{W_2} (expression matrices of common gene pathways). Use weights in Louvain.
+#' Quantile normalization and clustering for the list of \eqn{W_2} (expression matrices of common gene modules). Use weights in Louvain.
 #'
 #' @param W_2 List of \eqn{W_2}.
 #' @param Knn The maximum number of nearest neighbors to search (default 20).
@@ -175,7 +175,7 @@ get_stability_StrictAndWeight_k <- function(
 #' @param thre.niter Maximum number of block coordinate descent iterations to perform (default 500).
 #' @param num.cores Number of cores to use for optimizing factorizations in parallel (default 1).
 #' @param thre.delta Stop iteration when the reduction of objective function is less than delta (default 0.05).
-#' @param topn Number of genes that have the largest loadings on the pathway (default 100).
+#' @param topn Number of genes that have the largest loadings on the module (default 100).
 #'
 #' @useDynLib scINSIGHT
 #'

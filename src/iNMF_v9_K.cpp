@@ -54,7 +54,7 @@ List iNMF_BCD_Decrease(List count_list,
 
   // Initialize output
   int L = count_list.size();
-  int J = Label.size();
+  int J = max(Label)+1;
 
 
   int n_K = K.size();
@@ -425,7 +425,7 @@ List iNMF_BCD_Increase(List count_list,
 
   // Initialize output
   int L = count_list.size();
-  int J = Label.size();
+  int J = max(Label)+1;
 
 
   int n_K = K.size();
