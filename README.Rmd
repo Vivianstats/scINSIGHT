@@ -20,14 +20,14 @@ knitr::opts_chunk$set(
 
 ## Latest News
 
-> 2020/05/14:
+> 2022/02/04:
 
- + Version 0.1.0 released!
+ + Version 0.1.3 released!
 
  
 ## Introduction
 
-scINSIGHT uses a novel matrix factorization model to jointly analyze multiple single-cell gene expression samples from biologically heterogeneous sources, such as different disease phases,  treatment groups,  or developmental stages.   It assumes that each gene module is a sparse  and  non-negative  linear  combination  of  genes,  and  each  cell  is  jointly  defined  by  the expression of common and condition-specific modules.   Given multiple gene expression samples from different biological conditions, scINSIGHT aims to simultaneously identify common and condition-specific gene modules and quantify their expression levels in each sample in a lower-dimensional space .
+scINSIGHT uses a novel matrix factorization model to jointly analyze multiple single-cell gene expression samples from biologically heterogeneous sources, such as different disease phases, treatment groups, or developmental stages. It assumes that each gene module is a sparse and non-negative linear combination of genes, and each cell is jointly defined by the expression of common and condition-specific modules.  Given multiple gene expression samples from different biological conditions, scINSIGHT aims to simultaneously identify common and condition-specific gene modules and quantify their expression levels in each sample in a lower-dimensional space.
 
 Any suggestions on the package are welcome! For technical problems, please report to [Issues](https://github.com/Vivianstats/scINSIGHT/issues). For suggestions and comments on the method, please contact Kun (<kun_qian@foxmail.com>) or Vivian (<vivian.li@rutgers.edu>). 
 

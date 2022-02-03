@@ -2,7 +2,7 @@ scINSIGHT for interpreting single cell gene expression in biologically
 heterogeneous data
 ================
 Kun Qian, Wei Vivian Li
-2022-02-03
+2022-02-04
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -10,9 +10,9 @@ Kun Qian, Wei Vivian Li
 
 ## Latest News
 
-> 2020/05/14:
+> 2022/02/04:
 
--   Version 0.1.0 released!
+-   Version 0.1.3 released!
 
 ## Introduction
 
@@ -25,7 +25,7 @@ jointly defined by the expression of common and condition-specific
 modules. Given multiple gene expression samples from different
 biological conditions, scINSIGHT aims to simultaneously identify common
 and condition-specific gene modules and quantify their expression levels
-in each sample in a lower-dimensional space .
+in each sample in a lower-dimensional space.
 
 Any suggestions on the package are welcome! For technical problems,
 please report to

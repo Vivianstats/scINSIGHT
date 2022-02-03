@@ -75,6 +75,9 @@ real.counts = lapply(data.list, function(x){
 })
 ```
 
+`real.counts` is a list of two gene expression samples with rows representing
+2000 genes.
+
 In this example, the two samples are from the control or activation conditions, respectively. Therefore, we can initialize the scINSIGHT object as follows:
 
 ```{r set real sample and condition, echo = TRUE, message=TRUE, results='hide'}
@@ -102,14 +105,12 @@ For simulated dataset:
 ```{r run scINSIGHT, eval=FALSE, echo = TRUE, message=TRUE, results='hide'}
 sim.scobj = run_scINSIGHT(sim.scobj, K = seq(5,15,2), out.dir = './test_save_sim/',
                              num.cores = 5)
-
 ```
 
 For real dataset:
 ```{r run scINSIGHT real, eval=FALSE, echo = TRUE, message=TRUE, results='hide'}
 real.scobj = run_scINSIGHT(real.scobj, K = seq(5,15,2), out.dir = './test_save_real/',
                              num.cores = 5)
-
 ```
 
 In addition, users can tune the following parameters given the number and size of gene expression matrices:
