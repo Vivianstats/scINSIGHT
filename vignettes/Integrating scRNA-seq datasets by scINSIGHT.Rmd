@@ -103,14 +103,12 @@ After creating scINSIGHT object, we can use the `run_scINSIGHT` function to run 
 
 For simulated dataset:
 ```{r run scINSIGHT, eval=FALSE, echo = TRUE, message=TRUE, results='hide'}
-sim.scobj = run_scINSIGHT(sim.scobj, K = seq(5,15,2), out.dir = './test_save_sim/',
-                             num.cores = 5)
+sim.scobj = run_scINSIGHT(sim.scobj, K = seq(5,15,2), out.dir = './test_save_sim/', num.cores = 5)
 ```
 
 For real dataset:
 ```{r run scINSIGHT real, eval=FALSE, echo = TRUE, message=TRUE, results='hide'}
-real.scobj = run_scINSIGHT(real.scobj, K = seq(5,15,2), out.dir = './test_save_real/',
-                             num.cores = 5)
+real.scobj = run_scINSIGHT(real.scobj, K = seq(5,15,2), out.dir = './test_save_real/', num.cores = 5)
 ```
 
 In addition, users can tune the following parameters given the number and size of gene expression matrices:
@@ -158,6 +156,9 @@ celltype = unlist(lapply(1:length(sim.counts), function(i){
   lapply(1:ncol(sim.counts[[i]]), function(j){
     toupper(unlist(strsplit(colnames(sim.counts[[i]])[[j]], "[.]"))[[1]])})}))
 
+# Cluster results of each single cell
+clusters = as.character(unlist(sim.scobj@clusters))
+
 library(Rtsne)
 # W2 is the normalized expression levels of common gene modules
 W2 = Reduce(rbind, sim.scobj@norm.W_2)
@@ -166,10 +167,10 @@ res_tsne = Rtsne(W2, dims = 2, check_duplicates = FALSE)
 
 da_tsne = data.frame(tSNE1 = res_tsne$Y[,1], tSNE2 = res_tsne$Y[,2],
                      sample = sample, condition = condition,
-                     celltype = celltype)
+                     celltype = celltype, clusters = clusters)
 ```
 
-Then, we can obtain the tSNE plots colored by sample, condition or cell type.
+Then, we can obtain the tSNE plots colored by sample, condition, clusters or cell type.
 
 ```{r visualization, echo=TRUE, message=FALSE, warning=FALSE}
 library(ggplot2); theme_set(theme_classic())
@@ -179,15 +180,19 @@ p1 <- ggplot(da_tsne, aes(x = tSNE1, y = tSNE2, color = celltype)) +
     geom_point(cex = .3, stroke = .3) + scale_color_brewer(palette="Set1") +
     guides(colour = guide_legend(override.aes = list(size=3)))
 
-p2 <- ggplot(da_tsne, aes(x = tSNE1, y = tSNE2, color = condition)) +
+p2 <- ggplot(da_tsne, aes(x = tSNE1, y = tSNE2, color = clusters)) +
+    geom_point(cex = .3, stroke = .3) + scale_color_brewer(palette="Set2") +
+    guides(colour = guide_legend(override.aes = list(size=3)))
+
+p3 <- ggplot(da_tsne, aes(x = tSNE1, y = tSNE2, color = condition)) +
     geom_point(cex = .3, stroke = .3) + scale_color_brewer(palette="Dark2") +
     guides(colour = guide_legend(override.aes = list(size=3)))
 
-p3 <- ggplot(da_tsne, aes(x = tSNE1, y = tSNE2, color = sample)) +
+p4 <- ggplot(da_tsne, aes(x = tSNE1, y = tSNE2, color = sample)) +
     geom_point(cex = .3, stroke = .3) + scale_color_brewer(palette="Paired") +
     guides(colour = guide_legend(override.aes = list(size=3)))
 
-cowplot::plot_grid(p1, p2, p3, nrow = 2, ncol=2)
+cowplot::plot_grid(p1, p2, p3, p4, nrow = 2, ncol=2)
 ```
 
 

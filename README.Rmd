@@ -20,9 +20,9 @@ knitr::opts_chunk$set(
 
 ## Latest News
 
-> 2022/02/04:
+> 2022/05/19:
 
- + Version 0.1.3 released!
+ + Version 0.1.4 released!
 
  
 ## Introduction

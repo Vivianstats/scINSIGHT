@@ -30,6 +30,8 @@ The key slots used in the scINSIGHT object are described below.
 
 \item{\code{norm.W_2}}{List of \eqn{W_{\ell2}} after normalization. Recommended for downstream analysis.}
 
+\item{\code{clusters}}{List of cluster results.}
+
 \item{\code{parameters}}{List of selected parameters, including \eqn{K} and \eqn{\lambda}.}
 }}
 

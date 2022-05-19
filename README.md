@@ -2,7 +2,7 @@ scINSIGHT for interpreting single cell gene expression in biologically
 heterogeneous data
 ================
 Kun Qian, Wei Vivian Li
-2022-02-04
+2022-05-20
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -10,9 +10,9 @@ Kun Qian, Wei Vivian Li
 
 ## Latest News
 
-> 2022/02/04:
+> 2022/05/19:
 
--   Version 0.1.3 released!
+-   Version 0.1.4 released!
 
 ## Introduction
 

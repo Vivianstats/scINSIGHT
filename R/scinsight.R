@@ -13,6 +13,7 @@
 #' @slot H List of \eqn{H} estimated by scINSIGHT, names correspond to condition names.
 #' @slot V Matrix \eqn{V} estimated by scINSIGHT.
 #' @slot norm.W_2 List of \eqn{W_{\ell2}} after normalization. Recommended for downstream analysis.
+#' @slot clusters List of cluster results.
 #' @slot parameters List of selected parameters, including \eqn{K} and \eqn{\lambda}.
 #'
 #' @exportClass scINSIGHT
@@ -29,6 +30,7 @@ scINSIGHT <- methods::setClass(
     H = "list",
     V = "matrix",
     norm.W_2 = "list",
+    clusters = "list",
     parameters = "list"
   )
 )

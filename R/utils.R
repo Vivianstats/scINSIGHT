@@ -141,23 +141,46 @@ get_stability_StrictAndWeight_k <- function(
   }
 
   ### stability -----------------------
-  connect = lapply(res_parallel, function(x){
-    W2 = x[["W_2"]]
-    clust = norm_clust_strict_weighted(W2, Knn = nk)
-    gc()
-    W2 = Reduce(rbind, W2)
-    assign = unlist(clust$clusters)
-    cmat = clust2connect(assign)
-    return(cmat)
-  })
-  consmat = Reduce("+", connect)/length(res_parallel)
+  n_cell = sum(sapply(res_parallel[[1]][['W_2']], nrow))
+  n_res = length(res_parallel)
+  
+  x = res_parallel[[1]]
+  W2 = x[["W_2"]]
+  clust = norm_clust_strict_weighted(W2, Knn = nk)
+  W2 = Reduce(rbind, W2)
+  assign = unlist(clust$clusters)
+  if(n_cell > 20000){
+    n_sample = min(2^16-1, floor(n_cell*0.2))
+    index = sample(1:n_cell, n_sample)
+    assign = assign[index]
+  }
+  consmat = clust2connect(assign)/n_res
+  
+  if(n_res > 1){
+    
+    for(i in c(2:n_res)){
+      x = res_parallel[[i]]
+      W2 = x[["W_2"]]
+      clust = norm_clust_strict_weighted(W2, Knn = nk)
+      W2 = Reduce(rbind, W2)
+      assign = unlist(clust$clusters)
+      if(n_cell > 20000){
+        n_sample = min(2^16-1, floor(n_cell*0.2))
+        index = sample(1:n_cell, n_sample)
+        assign = assign[index]
+      }
+      consmat = consmat + clust2connect(assign)/n_res
+    }
+  }
+  
+  gc()
+  
   obs_hclust = hclust(as.dist(1-consmat), method = "average")
   cop = cophenetic(obs_hclust)
   d1 = (1-consmat)[upper.tri(consmat, diag = FALSE)]
   d2 = as.matrix(cop)[upper.tri(consmat, diag = FALSE)]
   stability = cor(d1, d2)
 
-  # print(stability)
   return(stability)
 }
 
@@ -285,7 +308,13 @@ select_LDA = function(
   names(object@W_1) = samples
   names(object@H) = uLabels
 
-  object@norm.W_2 = norm_clust_strict_weighted(object@W_2 , Knn=20)$W2
+  clust = norm_clust_strict_weighted(object@W_2 , Knn=20)
+
+  object@norm.W_2 = clust$W2
+  object@clusters = clust$clusters
+  
+  names(object@clusters) = samples
+  
   
   return(object)
 }
