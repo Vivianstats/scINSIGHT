@@ -3,8 +3,8 @@ title: "Analyzing multiple single-cell gene expression samples from biologically
 author: "Kun Qian, Wei Vivian Li"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 editor_options: 
   chunk_output_type: console
 ---
